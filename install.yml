@@ -1,0 +1,25 @@
+---
+# You can either install ansible and then run this, or modify to run against a remote host
+# Define hosts and modify
+# hosts: < new tartgets here >
+# connection: ssh
+
+- name: "Set up my zsh environment"
+  hosts: localhost
+  connection: local
+  vars:
+    common_packages:
+      - zsh
+      - tmux
+      - htop
+
+    mac_packages:
+      - vim
+
+    linux_packages:
+      - vim-nox
+
+  tasks:
+    - name: "Show ansible_facts"
+      debug:
+        var: ansible_facts

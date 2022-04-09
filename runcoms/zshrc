@@ -1,0 +1,26 @@
+[[ ! -d "$HOME/.antigen" ]] && git clone https://github.com/zsh-users/antigen.git "$HOME/.antigen"
+source "$HOME/.antigen/antigen.zsh"
+
+# Set the default plugin repo to be zsh-utils
+antigen use belak/zsh-utils
+
+# Specify completions we want before the completion module
+antigen bundle zsh-users/zsh-completions
+
+# Specify plugins we want
+antigen bundle editor
+antigen bundle history
+antigen bundle utility
+antigen bundle completion
+
+# Specify additional external plugins we want
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
+
+antigen theme romkatv/powerlevel10k
+
+# Load everything
+antigen apply
+
+# Set any settings or overrides here
+bindkey -e
